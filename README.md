@@ -1,1 +1,3 @@
 # Interview_Google_Places
+
+Old quicky made during interview, in Angular 2.3. Just looks up for places and displays them in a list. Doesn't work now since all Google Maps API services require billing accounts :(...
