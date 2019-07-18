@@ -1,3 +1,25 @@
-<h1>
-  {{title}}
-</h1>
+<div class="jumbotron">
+  <h1>
+    My Location
+  </h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4 form-group">
+      <label>Type A Location:
+        <input type="text" class="form-control" #autoInp (focus)="geolocate()">
+      </label>
+      <button class="btn btn-default" type="button" (click)="GetLocations()" [disabled]="place == null ? true : false">Submit</button>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+  <h3 *ngIf="this.places.length != 0">{{this.places.length}} restaurants found!</h3>
+  <div class="row" *ngFor="let res of places">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <app-place [restaurant]="res"></app-place>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>
