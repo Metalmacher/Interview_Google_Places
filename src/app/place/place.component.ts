@@ -6,14 +6,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./place.component.css']
 })
 export class PlaceComponent implements OnInit {
-  
   @Input('restaurant') restaurant: any;
-
-  constructor() {
-    debugger;
-   }
-
-  ngOnInit() {
-  }
-
+  constructor() {}
+  ngOnInit() {}
 }

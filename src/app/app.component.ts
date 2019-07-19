@@ -40,12 +40,11 @@ export class AppComponent implements AfterViewInit {
     
     // When the user selects an address from the dropdown, populate the address
     // fields in the form.
-    this.autocomplete.addListener('place_changed', this.fillInAddress);
+    this.autocomplete.addListener('place_changed', () => {this.fillInAddress(); });
   }
 
   fillInAddress() {
     this.place = this.autocomplete.getPlace();
-    debugger;
     this.zone.run(() => { });
   }
 
@@ -84,7 +83,6 @@ export class AppComponent implements AfterViewInit {
           "dist":  dist
         });
       });
-      debugger;
       this.places.sort((a: any, b: any)=>{
         return a.dist - b.dist;
       });
